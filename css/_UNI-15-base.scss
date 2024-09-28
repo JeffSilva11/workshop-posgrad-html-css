@@ -1,0 +1,121 @@
+$red-text-color: red;
+$background-color-white: #FFF;
+$background-color: rgb(70, 32, 124);
+
+body {
+    background-color: $background-color;
+}
+
+@mixin box-shadow($color) {
+    box-shadow: 4px 4px 4px 0 $color;
+}
+
+@mixin negrito($boolean) {
+    @if $boolean ==true {
+        font-weight: bold;
+    }
+}
+
+@mixin text-effect($val) {
+    @if $val ==danger {
+        color: red;
+    }
+
+    @else if $val ==alert {
+        color: orange;
+    }
+
+    @else if $val ==primary {
+        color: blue;
+    }
+
+    @else {
+        color: black;
+    }
+}
+
+$colors: (
+    color1: blue,
+    color2: red,
+    color3: green
+);
+
+@for $i from 1 through 5 {
+    .texto-#{$i} {
+        font-size: 15px * $i;
+    }
+}
+
+@each $key, $color in $colors {
+    .#{$color}-text {
+        color: $color;
+    }
+}
+
+/* Funções */
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@function fontColor($bgcolor) {
+    @if (lightness($bgcolor) > 50) {
+        @return #000;
+    }
+
+    @else {
+        @return #fff;
+    }
+}
+
+@function boxPosition($cols, $rows: 12) {
+    @return percentage($cols/$rows);
+}
+
+@mixin bgColor($bgcolor) {
+    background-color: $bgcolor;
+    color: fontColor($bgcolor);
+}
+
+@for $i from 0 through 4 {
+    $x: $i * 3;
+
+    .box#{$i + 1} {
+        @extend .flex;
+        @include bgColor(rgb(127, 213, 127));
+        width: 120px;
+        height: 120px;
+        position: absolute;
+        top: boxPosition($x);
+        left: boxPosition($x);
+        border: 2px solid red;
+
+        &:hover {
+            cursor: pointer;
+            background-color: blue;
+        }
+    }
+}
+
+
+// .container {
+//     @include box-shadow(rgb(206, 23, 23));
+//     $lightred-text-color: rgb(243, 124, 124);
+//     width: 200px;
+//     height: 200px;
+//     background-color: $background-color-white;
+
+//     p {
+//         @include box-shadow(rgb(13, 119, 39));
+//         @include negrito(true);
+//         width: 110px;
+//         height: 110px;
+//         color: $lightred-text-color;
+//     }
+// }
+
+// p {
+//     color: $red-text-color;
+//     @include text-effect(alert);
+// }

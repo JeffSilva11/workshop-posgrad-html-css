@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:wght@300&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --vermelho: #dc3320;
+    --verde: #65e938;
+    --amarelo: #fcba3f;
+    --CorPrimaria: #FFFF;
+    --CorDoTexto: #000;
+}
+
+body {
+    margin: 5px 0 0 5px;
+    font-family: 'Roboto', sans-serif;
+    color: #FFF;
+}
+
+.container {
+    width: 659px;
+    height: 400px;
+    background-color: indigo;
+    margin: 80px auto;
+    /* https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
+    display: flex;
+    /* flex-direction: row;
+    flex-wrap: wrap; */
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: baseline;
+    align-content: space-around;
+}
+
+.item {
+    width: 60px;
+    height: 60px;
+    /* margin: 1px 1px; */
+    background-color: orange;
+    border-radius: 3px;
+}
+
+.um {
+    height: 90px;
+    background-color: var(--vermelho);
+}
+
+.dois {
+    height: 30px;
+    background-color: var(--verde);
+}
+
+.tres {
+    height: 50px;
+    background-color: var(--vermelho);
+}
+
+.quatro {
+    height: 110px;
+    font-size: 45px;
+    background-color: var(--amarelo);
+}
+
+.cinco {
+    height: 60px;
+    background-color: var(--verde);
+}
+
+.seis {
+    height: 50px;
+    font-size: 30px;
+    background-color: var(--amarelo);
+}

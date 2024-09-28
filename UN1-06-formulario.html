@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>HTML 5 - Trabalhando com Formulários</title>
+</head>
+
+<body>
+  <h1>Trabalhando com Formulários</h1>
+
+  <form action="">
+    <fieldset>
+      <legend>Formulário de Cadastro</legend>
+
+      <label for="frame">Nome:</label>
+      <input type="text" value="" placeholder="Nome" name="fname">
+      <br><br>
+      <label for="lname">Sobrenome:</label>
+      <input type="text" value="" placeholder="Sobrenome" name="lname">
+      <br><br>
+      <input type="button" value="Salvar">
+      <input type="submit" value="Enviar">
+
+      <button>Outra opção de Botão Salvar</button>
+    </fieldset>
+  </form>
+
+  <hr>
+  <label for="estado">Escolha seu Estado:</label>
+  <select name="estado" id="estados">
+    <option>Selecione um Estado</option>
+    <option value="PR">Paraná</option>
+    <option value="SP">São Paulo</option>
+    <option value="MT">Mato Grosso</option>
+    <option value="RS">Rio Grande do Sul</option>
+    <option value="RJ">Rio de Janeiro</option>
+  </select>
+
+  <hr>
+  <textarea name="descricao" id="descricao" cols="50" rows="5"></textarea>
+
+  <hr>
+  <form action="" enctype="multipart/form-data">
+    <input list="cidades">
+    <datalist id="cidades">
+      <option value="Maringá"></option>
+      <option value="Londrina"></option>
+      <option value="Umuarama"></option>
+      <option value="Cascavel"></option>
+      <option value="Foz do Iguaçu"></option>
+      <option value="Curitiba"></option>
+    </datalist>
+
+    <hr>
+    <input type="checkbox" value="valorA"> Valor A
+    <input type="checkbox" value="valorB"> Valor B
+    <input type="checkbox" value="valorC"> Valor C
+    <input type="checkbox" value="valorD"> Valor D
+
+    <hr>
+
+    <input type="radio" name="forma_de_pagamento" value="dinheiro"> Dinheiro
+    <input type="radio" name="forma_de_pagamento" value="debito"> Cartão de Débito
+    <input type="radio" name="forma_de_pagamento" value="credito"> Cartão de Crédito
+    <input type="radio" name="forma_de_pagamento" value="pendura"> Pendura na conta
+
+    <hr>
+    <input type="color">
+    <hr>
+    <input type="date">
+    <input type="datetime-local">
+    <hr>
+    <input type="email" placeholder="seu email">
+    <hr>
+    <input type="file" name="avatar">
+    <hr>
+    <input type="hidden" value="Tá procurando alguma coisa? Curioso!">
+    <hr>
+    <input type="number">
+    <hr>
+    <input type="reset">
+    <hr>
+    <input type="search">
+    <hr>
+    <input type="range">
+    <hr>
+    <input type="tel">
+    <hr>
+    <input type="password">
+    <hr>
+    <input type="time">
+  </form>
+</body>
+
+</html>
